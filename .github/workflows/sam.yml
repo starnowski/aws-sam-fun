@@ -4,6 +4,7 @@ on:
     paths:
       - 'sam/**'
       - '.github/workflows/sam.yml'
+      - '.github/start_sam_locally.sh'
     branches:
       - main
 jobs:
