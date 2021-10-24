@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'sam/**'
+      - '.github/workflows/sam.yml'
     branches:
       - main
 jobs:
