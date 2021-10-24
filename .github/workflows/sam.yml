@@ -24,3 +24,8 @@ jobs:
       # Build inside Docker containers
       - run: cd sam/sam-app && sam build
       - run: ./.github/start_sam_locally.sh
+      - run: cd sam/sam-app/tests && python3 -m pip install -r requirements.txt
+      - run: cd sam/sam-app/tests && python3 -m unittest unit
+      - run: cd sam/sam-app/tests && python3 -m unittest integration
+        env:
+          AWS_SAM_TEST_HOST:  "localhost:3000"
