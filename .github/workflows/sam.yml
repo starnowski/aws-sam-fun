@@ -21,5 +21,5 @@ jobs:
 #          aws-secret-access-key: XXXXXXXXXX
 #          aws-region: us-east-2
       # Build inside Docker containers
-      - run: cd sam/sam-app sam build
+      - run: cd sam/sam-app && sam build
       - run: ./.github/start_sam_locally.sh
