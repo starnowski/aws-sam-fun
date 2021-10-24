@@ -132,3 +132,6 @@ dmypy.json
 **/.idea/*
 
 *.iml
+
+# AWS SAM subdirectories
+**/.aws-sam/*
