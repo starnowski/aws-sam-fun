@@ -1,7 +1,6 @@
 import os
 from unittest import TestCase
 
-import boto3
 import requests
 
 """
@@ -24,7 +23,7 @@ class TestApiGateway(TestCase):
         return stack_name
 
     def setUp(self) -> None:
-        self.api_endpoint = TestApiGateway.get_stack_name()
+        self.api_endpoint = TestApiGateway.get_api_endpoint()
 
     def test_api_gateway(self):
         """
