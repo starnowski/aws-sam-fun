@@ -12,3 +12,6 @@ sam local start-api
 ```shell
 curl http://127.0.0.1:3000/hello
 ```
+
+### How to set up github action
+https://github.com/aws-actions/setup-sam
