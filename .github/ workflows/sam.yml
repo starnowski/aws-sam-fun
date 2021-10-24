@@ -1,9 +1,10 @@
+name: Run tests for SAM project
 on:
   push:
     branches:
       - main
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
