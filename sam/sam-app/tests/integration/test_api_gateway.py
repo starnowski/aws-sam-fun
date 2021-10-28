@@ -36,19 +36,19 @@ class TestApiGateway(TestCase):
         """
         Call the API Gateway endpoint and check the response
         """
-        response = requests.get(self.api_endpoint + "/someResource")
+        response = requests.get(self.api_endpoint + "/some_resource")
         self.assertDictEqual(response.json(), {"message": "someResource: get"})
 
     def test_api_gateway_post(self):
         """
         Call the API Gateway endpoint and check the response
         """
-        response = requests.post(self.api_endpoint + "/someResource")
+        response = requests.post(self.api_endpoint + "/some_resource")
         self.assertDictEqual(response.json(), {"message": "someResource: post"})
 
     def test_api_gateway_get_with_path_parameter(self):
         """
         Call the API Gateway endpoint and check the response
         """
-        response = requests.get(self.api_endpoint + "/someResource/" + "XXX-GGG-ZZZ")
+        response = requests.get(self.api_endpoint + "/some_resource/" + "XXX-GGG-ZZZ")
         self.assertDictEqual(response.json(), {"message": "someResource: get with id parameter 'XXX-GGG-ZZZ'"})
