@@ -13,6 +13,10 @@ sam local start-api
 curl http://127.0.0.1:3000/hello
 ```
 
+```shell
+curl -X POST  http://127.0.0.1:3000/some_resource -H 'Content-Type: application/json' -d '{"res_name":"Test"}'
+```
+
 ### How to set up github action
 https://github.com/aws-actions/setup-sam
 
