@@ -56,7 +56,7 @@ class TestApiGateway(TestCase):
         Call the API Gateway endpoint and check the response
         """
         response = requests.get(self.api_endpoint + "/some_resource/XXX-GGG-ZZZ")
-        self.assertDictEqual(response.json(), {"message": "someResource: get with id parameter 'XXX-GGG-ZZZ'", "res_name": "Kuba"})
+        self.assertDictEqual(response.json(), {"message": "someResource: get with id parameter 'XXX-GGG-ZZZ'"})
 
     def test_api_gateway_put(self):
         """
