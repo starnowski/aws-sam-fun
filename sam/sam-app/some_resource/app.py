@@ -46,7 +46,21 @@ def lambda_handler(event, context):
     if event['resource'] == "/some_resource/{id}" and event['httpMethod'] == "GET":
         message = "someResource: get with id parameter '" + event['pathParameters']["id"] + "'"
     if event['resource'] == "/some_resource" and event['httpMethod'] == "POST":
-        message = "someResource: post"
+        return {
+            "statusCode": 200,
+            "body": json.dumps({
+                "message": "someResource: post",
+                "res_name": event['body']["res_name"]
+            }),
+        }
+    if event['resource'] == "/some_resource/{id}" and event['httpMethod'] == "PUT":
+        return {
+            "statusCode": 200,
+            "body": json.dumps({
+                "message": "someResource: put with id parameter '" + event['pathParameters']["id"] + "'",
+                "res_name": event['body']["res_name"]
+            }),
+        }
     if event['resource'] == "/some_resource" and event['httpMethod'] == "GET":
         message = "someResource: get"
     return {
