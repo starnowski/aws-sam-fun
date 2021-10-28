@@ -21,3 +21,6 @@ curl -X POST  http://127.0.0.1:3000/some_resource -H 'Content-Type: application/
 https://github.com/aws-actions/setup-sam
 
 https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html
+
+### Example of AWS ApiGateway tutorial for Lambda and Dynamodb
+https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-dynamo-db.html
