@@ -66,6 +66,8 @@ def lambda_handler(event, context):
         }
     if event['resource'] == "/some_resource" and event['httpMethod'] == "GET":
         message = "someResource: get"
+    if event['resource'] == "/some_resource/{id}" and event['httpMethod'] == "DELETE":
+        message = "someResource: delete with id parameter '" + event['pathParameters']["id"] + "'"
     return {
         "statusCode": 200,
         "body": json.dumps({
