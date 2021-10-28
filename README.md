@@ -15,3 +15,5 @@ curl http://127.0.0.1:3000/hello
 
 ### How to set up github action
 https://github.com/aws-actions/setup-sam
+
+https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html
