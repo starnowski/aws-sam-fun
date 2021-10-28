@@ -1,6 +1,5 @@
 import os
 from unittest import TestCase
-
 import requests
 
 """
@@ -43,12 +42,31 @@ class TestApiGateway(TestCase):
         """
         Call the API Gateway endpoint and check the response
         """
-        response = requests.post(self.api_endpoint + "/some_resource")
-        self.assertDictEqual(response.json(), {"message": "someResource: post"})
+        # GIVEN
+        payload = {'res_name': 'Kuba'}
+
+        # WHEN
+        response = requests.post(self.api_endpoint + "/some_resource", json=payload)
+
+        # THEN
+        self.assertDictEqual(response.json(), {"message": "someResource: post", "res_name": "Kuba"})
 
     def test_api_gateway_get_with_path_parameter(self):
         """
         Call the API Gateway endpoint and check the response
         """
-        response = requests.get(self.api_endpoint + "/some_resource/" + "XXX-GGG-ZZZ")
-        self.assertDictEqual(response.json(), {"message": "someResource: get with id parameter 'XXX-GGG-ZZZ'"})
+        response = requests.get(self.api_endpoint + "/some_resource/XXX-GGG-ZZZ")
+        self.assertDictEqual(response.json(), {"message": "someResource: get with id parameter 'XXX-GGG-ZZZ'", "res_name": "Kuba"})
+
+    def test_api_gateway_put(self):
+        """
+        Call the API Gateway endpoint and check the response
+        """
+        # GIVEN
+        payload = {'res_name': 'Mika'}
+
+        # WHEN
+        response = requests.put(self.api_endpoint + "/some_resource/DIRK", json=payload)
+
+        # THEN
+        self.assertDictEqual(response.json(), {"message": "someResource: put with id parameter 'DIRK'", "res_name": "Mika"})
