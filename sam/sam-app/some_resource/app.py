@@ -39,10 +39,20 @@ def lambda_handler(event, context):
     print("Lambda function memory limits in MB:", context.memory_limit_in_mb)
     print("Path parameters:", event['pathParameters'])
     print("Query parameters:", event["queryStringParameters"])
+    print("Http method:", event['httpMethod'])
+    print("Http path:", event['path'])
+    print("Http resource:", event['resource'])
+    message = "hello world";
+    if event['resource'] == "/some_resource/{id}" and event['httpMethod'] == "GET":
+        message = "someResource: get with id parameter '" + event['pathParameters']["id"] + "'"
+    if event['resource'] == "/some_resource" and event['httpMethod'] == "POST":
+        message = "someResource: post"
+    if event['resource'] == "/some_resource" and event['httpMethod'] == "GET":
+        message = "someResource: get"
     return {
         "statusCode": 200,
         "body": json.dumps({
-            "message": "hello world",
+            "message": message,
             # "location": ip.text.replace("\n", "")
         }),
     }
