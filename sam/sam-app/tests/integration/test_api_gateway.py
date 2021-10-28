@@ -70,3 +70,13 @@ class TestApiGateway(TestCase):
 
         # THEN
         self.assertDictEqual(response.json(), {"message": "someResource: put with id parameter 'DIRK'", "res_name": "Mika"})
+
+    def test_api_gateway_delete(self):
+        """
+        Call the API Gateway endpoint and check the response
+        """
+        # WHEN
+        response = requests.delete(self.api_endpoint + "/some_resource/RESOURCE_TO_DELETE")
+
+        # THEN
+        self.assertDictEqual(response.json(), {"message": "someResource: delete with id parameter 'RESOURCE_TO_DELETE'"})
