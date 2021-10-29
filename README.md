@@ -24,3 +24,6 @@ https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html
 
 ### Example of AWS ApiGateway tutorial for Lambda and Dynamodb
 https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-dynamo-db.html
+
+### SAM example projects
+https://github.com/amazon-archives/serverless-app-examples/tree/master/python
