@@ -27,3 +27,7 @@ https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-dynamo-db.
 
 ### SAM example projects
 https://github.com/amazon-archives/serverless-app-examples/tree/master/python
+
+https://aws.amazon.com/about-aws/whats-new/2019/02/develop-and-test-aws-step-functions-workflows-locally/
+https://hub.docker.com/r/amazon/aws-stepfunctions-local
+https://docs.aws.amazon.com/step-functions/latest/dg/sfn-local-lambda.html
